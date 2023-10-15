@@ -30,7 +30,7 @@ public class TaskModel {
 
     private LocalDateTime startAt;
 
-    private LocalDateTime fishedAt;
+    private LocalDateTime finishedAt;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
