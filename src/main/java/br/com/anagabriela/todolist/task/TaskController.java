@@ -50,6 +50,9 @@ public class TaskController {
         var userId = request.getAttribute("userId");
 
         var task = this.taskRepository.findById(id).orElse(null);
+        if (task == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Task not found");
+        }
         if (!task.getUserId().equals(userId)) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User not authorized");
         }
